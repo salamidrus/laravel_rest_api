@@ -1,0 +1,19 @@
+# Create a new project
+laravel new <project_name>
+
+# Check laravel version
+php artisan --version
+
+# Installing laravel passport
+composer require laravel/passport
+
+# Migrate over the created tables by laravel passport
+php artisan migrate
+
+# Install passport
+php artisan passport:install
+
+Steps to setup Passport in project:
+1. Go to Model > User (to Import HasAPITokens Module)
+2. Go to Provider > AuthServiceProvider (to add Passport Routes)
+3. Go to Config > Auth (Change guards token to use passport)
