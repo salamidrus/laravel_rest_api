@@ -17,3 +17,22 @@ Steps to setup Passport in project:
 1. Go to Model > User (to Import HasAPITokens Module)
 2. Go to Provider > AuthServiceProvider (to add Passport Routes)
 3. Go to Config > Auth (Change guards token to use passport)
+
+# Use Tinker - to make data in DB_DATABASE
+php artisan tinker
+commands:
+DB::table('users')->insert(['name'=>'Code With Dary', 'email'=>'info@darynazar.com', 'password'=>Hash::make('dary1234')]);
+
+# Start Server
+php artisan serve
+
+# How to get an access_token
+go to <server url>/oauth/token
+Fill up the body on form-data
+- grant_type : password
+- client_id : <client_id> from php artisan passport:install
+- client_secret: <client_secret> from php artisan passport:install
+- username : <username> in database 'users'
+- password : <password> in database 'users'
+- scope: <blank>
+
