@@ -36,3 +36,13 @@ Fill up the body on form-data
 - password : <password> in database 'users'
 - scope: <blank>
 
+# Building resources
+php artisan make:model -a -r <model_name>
+- -a: make all
+- -r: make all controller resources for REST API
+
+# Seeding command
+php artisan migrate --seed
+
+# Make resources
+php artisan make:resource AuthorsResource
